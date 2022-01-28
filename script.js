@@ -32,6 +32,7 @@ function getCurrentAndForecast(lat, lon, input) {
     });
 }
 
+// Function to display weather data retreived from API into cards.
 function createCurrentWeatherUI(currentWeather, input) {
   // Changing uv index colour based on index readings.
   var uvButton;
