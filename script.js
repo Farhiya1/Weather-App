@@ -80,6 +80,11 @@ function createFiveDayForecastUI(forecast) {
     futureWeatherEl.appendChild(forecastCard);
   }
 }
+function createSearchHistoryButtons() {
+  console.log(previousSearchHistory);
+  //use search history and render the buttons onto the page
+  var searchPrev;
+}
 // Event listener for search location button "submit"
 button.addEventListener("click", () => {
   const currentVal = search.value;
