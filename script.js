@@ -88,3 +88,9 @@ button.addEventListener("click", () => {
   getCurrentSearchCoords(currentVal);
 });
 
+createSearchHistoryButtons();
+
+// Event listener for search previous location button "previousLocation"
+btn.addEventListener("click", () => {
+  const searchedLocations = previousSearchHistory.value;
+});
