@@ -1,6 +1,9 @@
 // Targeting html elements by id and storing API key
 const search = document.getElementById("searchUser");
 const button = document.getElementById("submit");
+const btn = document.getElementById("previousLocation");
+let currentWeatherEl = document.getElementById("current");
+let futureWeatherEl = document.getElementById("forecast");
 const myKey = "988fbbe10b9a8419e74f5e6d95338e7c";
 fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${myKey}&units=metric`
