@@ -57,6 +57,29 @@ function createCurrentWeatherUI(currentWeather, input) {
         </div>
     </div>`;
 }
+// Function to display 5 day weather forecast to html including weather icons
+function createFiveDayForecastUI(forecast) {
+  // Clearing future forecast when page reloads
+  futureWeatherEl.innerHTML = "";
+  console.log(forecast);
+  for (var i = 0; i < 5; i++) {
+    var forecastDate = moment().add(i + 1, "days");
+    var forecastCard = document.createElement("div");
+    forecastCard.setAttribute("class", "col-lg-2");
+    forecastCard.innerHTML = `
+    <div class="card mx-auto mt-5">
+    <div class="card-body justify-content-center">
+    <h6 class="card-subtitle mb-2 text-muted">${forecastDate}}</h6> <br>
+        <h6 class="card-subtitle mb-2 text-muted">Temp: ${forecast[i].temp.day} °C</h6>
+        <img src="http://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png">
+        <p class="card-text ">Wind Speed: ${forecast[i].wind_speed} MPH</p>
+      <p class="card-text ">Humidity: ${forecast[i].humidity} %</p>
+    </div>
+</div>`;
+
+    futureWeatherEl.appendChild(forecastCard);
+  }
+}
 // Event listener for search location button "submit"
 button.addEventListener("click", () => {
   const currentVal = search.value;
