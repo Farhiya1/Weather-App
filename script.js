@@ -32,6 +32,30 @@ function getCurrentAndForecast(lat, lon, input) {
     });
 }
 
+function createCurrentWeatherUI(currentWeather, input) {
+  // Changing uv index colour based on index readings.
+  var uvButton;
+  if (currentWeather.uvi < 2) {
+    uvButton = " btn-success";
+  } else if (currentWeather.uvi > 3 || 5) {
+    uvButton = " btn-warning";
+  } else {
+    currentWeather.uvi > 6;
+    uvButton = " btn-danger";
+  }
+
+  currentWeatherEl.innerHTML = `
+    <div class="card mx-auto mt-5" style="width: 18rem;">
+        <div class="card-body justify-content-center">
+            <h5 class="card-title">${input}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Temp: ${currentWeather.temp} °C</h6>
+            <img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png">
+            <p class="card-text ">Wind Speed: ${currentWeather.wind_speed} MPH</p>
+          <p class="card-text ">Humidity: ${currentWeather.humidity} %</p>
+          <button class=${uvButton}>UV: ${currentWeather.uvi}<button/>
+        </div>
+    </div>`;
+}
 // Event listener for search location button "submit"
 button.addEventListener("click", () => {
   const currentVal = search.value;
