@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"
+  />
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
   </head>
   <body>
-    <h1>Weather Forecast</h1>
+    <body>
+        <!--Navbar Section-->
+      <nav class="navbar navbar-dark bg-info mb-3">
+        <div class="container">
+          <div class="navbar-brand">Weather Dashboard</div>
+        </div>
+      </nav>
+      <!--Search Location Form Section-->
+      <div class="container searchContainer bg-warning float-left">
+        <div class="search card card-body">
+          <h1>What's The Weather?</h1>
+          <p class="lead">Enter Your Location</p>
+          <input
+            type="text"
+            id="searchUser"
+            class="form-control"
+            placeholder="Location"
+          />
+        </div>
+        <br />
+        <div id="profile"></div>
+      </div>
+      <!--Buttons section-->
+      <div class="container text-left mt-2 d-inline-block">
+        <button class="btn btn-outline-info" id="submit">Submit</button>
+        <button class="btn btn-outline-success" id="previousLocation">Previous Location</button>
+      </div>
+     <!--Add current and future weather data to html using JS-->
+      <div id="content"></div>
+      <section id="current"></section>
+          <section id="forecast" class="row"></section>
+        </div>
+    </body>
 
-    <form id="WeatherForm">
-      <label for="weatherLocation">City</label>
-      <input type="text" id="WeatherCityLocation" />
-      <button type="submit" id="submit">Generate Forecast</button>
-    </form>
-
+    <!-- Script Links to Jquery, Moment.js and JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
