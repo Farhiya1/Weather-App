@@ -60,3 +60,8 @@ function createCurrentWeatherUI(currentWeather, input) {
 // Event listener for search location button "submit"
 button.addEventListener("click", () => {
   const currentVal = search.value;
+
+  //   Function to find and display location called
+  getCurrentSearchCoords(currentVal);
+});
+
