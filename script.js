@@ -9,6 +9,10 @@ const myKey = "988fbbe10b9a8419e74f5e6d95338e7c";
 const previousSearchHistory =
   JSON.parse(localStorage.getItem("search-history")) || [];
 
+//   Adding live date and time using moment.js alongside forecast data
+var currentDate = moment().format("dddd MMM Do YYYY, h:mm a ");
+$("#currentDay").append(currentDate);
+
 // Fetching current weather data with Current Weather Data API to get the coordinates.
 function getCurrentSearchCoords(input) {
   previousSearchHistory.push(input);
