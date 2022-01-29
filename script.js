@@ -5,6 +5,10 @@ const btn = document.getElementById("previousLocation");
 let currentWeatherEl = document.getElementById("current");
 let futureWeatherEl = document.getElementById("forecast");
 const myKey = "988fbbe10b9a8419e74f5e6d95338e7c";
+// Retreiving search history from local storage
+const previousSearchHistory =
+  JSON.parse(localStorage.getItem("search-history")) || [];
+
 // Fetching current weather data with Current Weather Data API to get the coordinates.
 function getCurrentSearchCoords(input) {
   previousSearchHistory.push(input);
