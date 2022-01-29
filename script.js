@@ -5,6 +5,13 @@ const btn = document.getElementById("previousLocation");
 let currentWeatherEl = document.getElementById("current");
 let futureWeatherEl = document.getElementById("forecast");
 const myKey = "988fbbe10b9a8419e74f5e6d95338e7c";
+// Fetching current weather data with Current Weather Data API to get the coordinates.
+function getCurrentSearchCoords(input) {
+  previousSearchHistory.push(input);
+  //   Saving previous search history into local storage
+  localStorage.setItem("search-history", JSON.stringify(previousSearchHistory));
+  createSearchHistoryButtons();
+
 fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${myKey}&units=metric`
 )
